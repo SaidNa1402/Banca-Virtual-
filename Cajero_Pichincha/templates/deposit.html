@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Depósito{% endblock title %}
+{% block navbar_class %}hide-elements{% endblock navbar_class %}
+
+{% block content %}
+<div class="container form-container">
+    <br>
+    <h2>Depósito</h2>
+    <br>
+    <form method="post" action="{% url 'Cajero_Pichincha:deposit' %}">
+        {% csrf_token %}
+        <div class="login-item">
+            <div class="form-group">
+                <h2 class="mb-1" style="font-size:20px">Cuenta: {{ account.account_number }}</h2>
+                <small class="text-muted" style="font-size=10px">Saldo actual: ${{ account.funds }}</small>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.amount.id_for_label }}">Monto</label>
+                {{ form.amount }}
+                {% if form.amount.errors %}
+                    <div class="error-message alert alert-danger">
+                        {% for error in form.amount.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary w-100">Depositar</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}
