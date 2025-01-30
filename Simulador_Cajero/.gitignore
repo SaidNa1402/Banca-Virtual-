@@ -1,0 +1,38 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+.Python
+
+# Entorno Virtual - más específico
+.venv/
+venv/
+ENV/
+Lib/
+Scripts/
+pyvenv.cfg
+*.pyc
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de caché
+*.cache
+.pytest_cache/
+
+# Mantener static
+!static/
+!*/static/
