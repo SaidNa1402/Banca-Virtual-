@@ -5,8 +5,7 @@ De uso únicamente educativo.
 
 Colaboradores:
 
-Said Navarrete 
-Caleb San Lucas
+Said Navarrete - Caleb San Lucas
 
 
 Vista previa del proyecto
