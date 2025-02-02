@@ -6,7 +6,6 @@ De uso únicamente educativo.
 Colaboradores:
 
 Said Navarrete 
-----------------
 Caleb San Lucas
 
 
