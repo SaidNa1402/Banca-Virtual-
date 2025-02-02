@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Página de Registro{% endblock title %}
+{% block navbar_class %}hide-elements{% endblock navbar_class %}
+
+{% block content %}
+<div class="container form-container">
+    <br>
+    <h2>Registro de Usuario</h2>
+    <br>
+    <form method="post" action="{% url 'Cajero_Virtual:register' %}">
+        {% csrf_token %}
+        <div class="login-item">
+            <div class="form-group">
+                <label for="{{ user_form.username.id_for_label }}">Nombre de Usuario</label>
+                {{ user_form.username }}
+                <small class="form-text text-muted">Nombre que usarás para iniciar sesión</small>
+            </div>
+            <div class="form-group">
+                <label for="{{ user_form.email.id_for_label }}">Correo Electrónico</label>
+                {{ user_form.email }}
+            </div>
+            <div class="form-group">
+                <label for="{{ user_form.identification.id_for_label }}">Cédula</label>
+                {{ user_form.identification }}
+            </div>
+            <div class="form-group">
+                <label for="{{ user_form.phone_number.id_for_label }}">Teléfono</label>
+                {{ user_form.phone_number }}
+            </div>
+            <div class="form-group">
+                <label for="{{ user_form.password1.id_for_label }}">Contraseña</label>
+                {{ user_form.password1 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ user_form.password2.id_for_label }}">Confirmar Contraseña</label>
+                {{ user_form.password2 }}
+            </div>
+            <div class="form-group">
+                <label for="{{ account_form.account_type.id_for_label }}">Tipo de Cuenta</label>
+                {{ account_form.account_type }}
+            </div>
+            {% if user_form.errors or account_form.errors %}
+            <div class="form-group">
+                <label for="{{ user_form.username.id_for_label }}">Nombre de Usuario</label>
+                {{ user_form.username }}
+                {% if user_form.username.errors %}
+                    <br>
+                    <div class="error-message alert alert-danger">
+                        {% for error in user_form.username.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Registrarse</button>
+    </form>
+</div>
+{% endblock content %}

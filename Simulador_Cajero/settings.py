@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Cajero_Pichincha.apps.CajeroPichinchaConfig',
+    'Cajero_Virtual.apps.CajeroVirtualConfig',
 ]
 
 MIDDLEWARE = [
@@ -108,7 +108,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'Cajero_Pichincha' / 'static'
+    BASE_DIR / 'Cajero_Virtual' / 'static'
 ]
 
 # Media files
@@ -119,7 +119,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Authentication settings
-AUTH_USER_MODEL = 'Cajero_Pichincha.User'
-LOGIN_URL = 'Cajero_Pichincha:login'
-LOGIN_REDIRECT_URL = 'Cajero_Pichincha:display_bank_services'
-LOGOUT_REDIRECT_URL = 'Cajero_Pichincha:index'
+AUTH_USER_MODEL = 'Cajero_Virtual.User'
+LOGIN_URL = 'Cajero_Virtual:login'
+LOGIN_REDIRECT_URL = 'Cajero_Virtual:display_bank_services'
+LOGOUT_REDIRECT_URL = 'Cajero_Virtual:index'
